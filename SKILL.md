@@ -265,4 +265,8 @@ This skill ships three runnable, self-contained test notebooks in `examples/`:
 
 All three share one deterministic 5-scene sample brief, neural narration via edge-tts, burned-in captions, a synthesized music bed, and the same QA report contract. Set `AIVIDEO_SMOKE=1` to render a fast 640x360 test; unset it for full quality.
 
+Story-length reference: [`ai-video-anime-10min`](https://github.com/bhavyajindia/ai-video-anime-10min) is a 28-scene, ~10-minute multi-character anime short built from the Tesla notebook. It shows the scene manifest at scale, optional `cast` tags, and chapter pacing.
+
+Never hardcode the scene count in QA. Validate `len(SCENES) == len(scene_files) and len(SCENES) > 0`; treat any literal count as a bug once the brief changes.
+
 Use these as the reference implementation of this skill. When the user asks for a new video, copy the closest profile notebook and change the brief, scenes, palette, voice, and durations—do not rebuild the architecture.
