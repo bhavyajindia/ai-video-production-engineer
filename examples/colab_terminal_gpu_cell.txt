@@ -1,0 +1,23 @@
+# Colab GPU Terminal + Shell Access Cell
+# Run this in Google Colab to get a terminal/shell with GPU access
+
+# Install dependencies
+!apt-get update -qq && apt-get install -y -qq tmux neofetch htop nano > /dev/null 2>&1
+
+# Check GPU
+!nvidia-smi
+!neofetch --stdout 2>/dev/null | head -15
+
+# Start a persistent tmux session for terminal access
+# Option 1: Use colab-ssh (recommended)
+!pip install colab-ssh --quiet
+from colab_ssh import launch_ssh
+launch_ssh('YOUR_SSH_PASSWORD', 'YOUR_NGROK_AUTH_TOKEN')  # Get ngrok token from https://dashboard.ngrok.com/get-started/your-authtoken
+
+# Option 2: Use ttyd for web terminal (easier, no ngrok needed)
+!pip install -q pyngrok
+from pyngrok import ngrok
+!wget -q https://github.com/tsl0922/ttyd/releases/download/1.7.4/ttyd.x86_64 -O /usr/local/bin/ttyd && chmod +x /usr/local/bin/ttyd
+!ttyd -p 7681 bash &
+public_url = ngrok.connect(7681, "http")
+print("Web Terminal URL:", public_url)
