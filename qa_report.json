@@ -1,0 +1,109 @@
+{
+  "file": "/tmp/opencode/nbtest-cpu-full/ai_video_output/cpu/final_video.mp4",
+  "checks": [
+    {
+      "name": "video stream exists",
+      "pass": true,
+      "detail": "codec=h264"
+    },
+    {
+      "name": "audio stream exists",
+      "pass": true,
+      "detail": "codec=aac"
+    },
+    {
+      "name": "duration matches timeline",
+      "pass": true,
+      "detail": "29.96s vs 29.96s"
+    },
+    {
+      "name": "resolution matches profile",
+      "pass": true,
+      "detail": "1280x720"
+    },
+    {
+      "name": "file is non-trivial",
+      "pass": true,
+      "detail": "2083447 bytes"
+    },
+    {
+      "name": "full decode without errors",
+      "pass": true,
+      "detail": "clean"
+    },
+    {
+      "name": "no black segment",
+      "pass": true,
+      "detail": "none"
+    },
+    {
+      "name": "audio is audible",
+      "pass": true,
+      "detail": "max=-1.5 dB mean=-16.8 dB"
+    },
+    {
+      "name": "final audio not mostly silent",
+      "pass": true,
+      "detail": "0.00s silence / 29.96s"
+    },
+    {
+      "name": "every scene has voice audio",
+      "pass": true,
+      "detail": "durations={'s1': 4.32, 's2': 5.66, 's3': 6.84, 's4': 6.26, 's5': 5.02} rms={'s1': 3527.3, 's2': 3110.1, 's3': 3406.5, 's4': 3059.2, 's5': 3271.6}"
+    },
+    {
+      "name": "narration track is audible",
+      "pass": true,
+      "detail": "max=-2.1 dB"
+    },
+    {
+      "name": "frames are not black (sampled)",
+      "pass": true,
+      "detail": "luma samples=[39.2, 39.6, 43.6, 40.0, 31.4]"
+    },
+    {
+      "name": "scene count and captions valid",
+      "pass": true,
+      "detail": "5 scenes"
+    }
+  ],
+  "warnings": [
+    "Creative review (story, typography, pacing, rights) still requires a human."
+  ],
+  "status": "REVIEW_REQUIRED",
+  "measured": {
+    "duration": 29.958,
+    "size_bytes": 2083447,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1280,
+    "height": 720,
+    "fps": "24/1",
+    "streams": 2,
+    "max_volume_db": -1.5,
+    "mean_volume_db": -16.8,
+    "silent_seconds": 0,
+    "narration_rms": {
+      "s1": 3527.3,
+      "s2": 3110.1,
+      "s3": 3406.5,
+      "s4": 3059.2,
+      "s5": 3271.6
+    },
+    "narration_seconds": {
+      "s1": 4.32,
+      "s2": 5.66,
+      "s3": 6.84,
+      "s4": 6.26,
+      "s5": 5.02
+    },
+    "narration_max_volume_db": -2.1,
+    "sample_brightness": [
+      39.2,
+      39.6,
+      43.6,
+      40.0,
+      31.4
+    ]
+  }
+}

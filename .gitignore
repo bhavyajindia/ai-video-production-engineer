@@ -1,0 +1,18 @@
+# Output directories
+ai_video_output/
+**/ai_video_output/
+output/
+_cache/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Logs
+*.log
+logs/
